@@ -1,12 +1,14 @@
 
+import { useContext } from 'react';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const AddToys = () => {
+    const { user } = useContext(AuthContext);
     const handleSubmit = (event) => {
         event.preventDefault();
 
         const form = event.target;
-        console.log(form.name.value)
         const pictureUrl = form.pictureURL.value;
         const name = form.name.value;
         const sellerName = form.sellerName.value;
@@ -31,7 +33,21 @@ const AddToys = () => {
 
         console.log(newToy);
 
-        // Send data to the server or perform further actions
+        //! Send data to the server
+        fetch('http://localhost:5000/alltoys', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newToy)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.insertedId){
+                alert('Toy added successfully')
+            }
+        })
 
         // Reset the form
         form.reset();
@@ -59,6 +75,7 @@ const AddToys = () => {
                         name="pictureURL"
                         placeholder="Picture URL"
                         className="input input-bordered w-full"
+                        required
                     />
                 </div>
 
@@ -66,14 +83,15 @@ const AddToys = () => {
                 <div className="grid gap-4 md:grid-cols-2 mb-6">
                     <div>
                         <label htmlFor="name" className="label">
-                            Name
+                           Toy Name
                         </label>
                         <input
                             type="text"
                             id="name"
                             name="name"
-                            placeholder="Name"
+                            placeholder="Toy Name"
                             className="input input-bordered w-full"
+                            required
                         />
                     </div>
                     <div>
@@ -81,11 +99,13 @@ const AddToys = () => {
                             Seller Name
                         </label>
                         <input
+                            defaultValue={user?.displayName}
                             type="text"
                             id="sellerName"
                             name="sellerName"
                             placeholder="Seller Name"
                             className="input input-bordered w-full"
+                            required
                         />
                     </div>
                 </div>
@@ -98,10 +118,12 @@ const AddToys = () => {
                         </label>
                         <input
                             type="email"
+                            defaultValue={user?.email}
                             id="sellerEmail"
                             name="sellerEmail"
                             placeholder="Seller Email"
                             className="input input-bordered w-full"
+                            required
                         />
                     </div>
                     <div>
@@ -114,6 +136,7 @@ const AddToys = () => {
                             name="subCategory"
                             placeholder="Sub-Category"
                             className="input input-bordered w-full"
+                            required
                         />
                     </div>
                 </div>
@@ -130,6 +153,7 @@ const AddToys = () => {
                             name="price"
                             placeholder="Price"
                             className="input input-bordered w-full"
+                            required
                         />
                     </div>
                     <div>
@@ -142,6 +166,7 @@ const AddToys = () => {
                             name="rating"
                             placeholder="Rating"
                             className="input input-bordered w-full"
+                            required
                         />
                     </div>
                 </div>
@@ -157,6 +182,7 @@ const AddToys = () => {
                         name="quantity"
                         placeholder="Available Quantity"
                         className="input input-bordered w-full"
+                        required
                     />
                 </div>
 
@@ -170,6 +196,7 @@ const AddToys = () => {
                         name="description"
                         placeholder="Detail Description"
                         className="input input-bordered w-full h-32"
+                        required
                     ></textarea>
                 </div>
 
@@ -178,6 +205,7 @@ const AddToys = () => {
                     type="submit"
                     value="Add Toy"
                     className="btn btn-primary w-full"
+                    required
                 />
             </form>
         </div>
