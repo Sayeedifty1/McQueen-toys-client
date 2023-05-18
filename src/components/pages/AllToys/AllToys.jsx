@@ -2,6 +2,7 @@ import  { useEffect, useState } from "react";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     fetch("https://toy-e-commerece-server.vercel.app/alltoys")
@@ -10,9 +11,28 @@ const AllToys = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  // Filter toys based on the search query
+  const filteredToys = toys.filter((toy) =>
+    toy.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
   return (
     <div className="container mx-auto overflow-x-auto">
       <h2 className="text-3xl font-bold mb-4">All Toys</h2>
+      <div className="mb-4">
+        {/* TODO:design search bar */}
+        <input
+          type="text"
+          placeholder="Search by Toy Name"
+          value={searchQuery}
+          onChange={handleSearch}
+          className="border border-gray-300 rounded-md px-4 py-2"
+        />
+      </div>
       <table className="table w-full">
         <thead>
           <tr className="hover">
@@ -25,8 +45,7 @@ const AllToys = () => {
           </tr>
         </thead>
         <tbody>
-          {toys.map((toy) => 
-          (
+          {filteredToys.map((toy) => (
             <tr className="hover" key={toy._id}>
               <td className="px-4 py-2">{toy.sellerName}</td>
               <td className="px-4 py-2">{toy.name}</td>
