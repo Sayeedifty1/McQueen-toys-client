@@ -3,7 +3,7 @@ import logo from '../../../../../public/logo.png'
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-base-200 text-base-content">
+            <footer className="footer p-10 bg-base-200 text-base-content " >
                 <div>
                     <img className='w-36' src={logo} alt="" />
                     <p className="footer-title">McQueen Toys<br />Providing reliable toys since 1992</p>
