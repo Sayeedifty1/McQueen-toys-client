@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import { RiDeleteBin5Line } from "react-icons/ri";
-import { GrDocumentUpdate } from "react-icons/gr";
+import { RiDeleteBin5Line } from   "react-icons/ri";
+import {GrDocumentUpdate} from "react-icons/gr";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from 'sweetalert2';
+import { Link } from "react-router-dom";
 
 const MyToysPage = () => {
     const [toys, setToys] = useState([]);
@@ -10,7 +11,7 @@ const MyToysPage = () => {
     console.log(user?.email)
     useEffect(() => {
         // Fetch the user's toys from the server
-        fetch(`https://toy-e-commerece-server.vercel.app/alltoys/${user?.email}`)
+        fetch(`https://toy-e-commerece-server.vercel.app/alltoys/seller/${user?.email}`)
             .then((response) => response.json())
             .then((data) => setToys(data))
             .catch((error) => console.log(error));
@@ -19,39 +20,40 @@ const MyToysPage = () => {
     // Function to handle toy deletion
     const handleDeleteToy = (toyId) => {
         Swal.fire({
-            title: 'Confirmation',
-            text: 'Are you sure you want to delete this toy?',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#3085d6',
-            confirmButtonText: 'Delete',
-            cancelButtonText: 'Cancel'
+          title: 'Confirmation',
+          text: 'Are you sure you want to delete this toy?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#d33',
+          cancelButtonColor: '#3085d6',
+          confirmButtonText: 'Delete',
+          cancelButtonText: 'Cancel'
         }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`https://toy-e-commerece-server.vercel.app/alltoys/${toyId}`, {
-                    method: 'DELETE',
-                })
-                    .then((response) => response.json())
-                    .then((data) => {
-                        // Remove the deleted toy from the list
-                        setToys((prevToys) => prevToys.filter((toy) => toy._id !== toyId));
-                        console.log(data);
-                        if (data.deletedCount) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Deleted!',
-                                text: 'Toy successfully deleted!',
-                                confirmButtonText: 'OK',
-                            });
-                        }
-                    })
-                    .catch((error) => console.log(error));
-            }
+          if (result.isConfirmed) {
+            fetch(`https://toy-e-commerece-server.vercel.app/alltoys/${toyId}`, {
+              method: 'DELETE',
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                // Remove the deleted toy from the list
+                setToys((prevToys) => prevToys.filter((toy) => toy._id !== toyId));
+                console.log(data);
+                if (data.deletedCount) {
+                  Swal.fire({
+                    icon: 'success',
+                    title: 'Deleted!',
+                    text: 'Toy successfully deleted!',
+                    confirmButtonText: 'OK',
+                  });
+                }
+              })
+              .catch((error) => console.log(error));
+          }
         });
-    };
-
-
+      };
+      
+      
+     
 
     return (
         <div className="w-5/6 mx-auto text-center">
@@ -84,16 +86,16 @@ const MyToysPage = () => {
                             <td className="p-2 border">
                                 <button
                                     className="bg-red-500 hover:bg-red-600 text-white px-2 py-2 rounded"
-                                    onClick={() => handleDeleteToy(toy._id)}
+                                  onClick={() => handleDeleteToy(toy._id)}
                                 >
                                     <RiDeleteBin5Line />
                                 </button>
-                                <button
-                                    className="bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded ml-2"
-                                // onClick={() => handleUpdateToy(toy._id)}
-                                >
+                                <Link to={`/updatetoy/${toy._id}`}>
+                                <button className="bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded ml-2">
                                     <GrDocumentUpdate />
                                 </button>
+                                </Link>
+                                
                             </td>
                         </tr>
                     ))}
