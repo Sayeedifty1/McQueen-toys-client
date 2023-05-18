@@ -34,7 +34,7 @@ const AddToys = () => {
         console.log(newToy);
 
         //! Send data to the server
-        fetch('http://localhost:5000/alltoys', {
+        fetch('https://toy-e-commerece-server.vercel.app/alltoys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -45,19 +45,19 @@ const AddToys = () => {
         .then(data => {
             console.log(data);
             if(data.insertedId){
-                alert('Toy added successfully')
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Toy Added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
             }
         })
 
         // Reset the form
         form.reset();
 
-        Swal.fire({
-            title: 'Success!',
-            text: 'Toy Added Successfully',
-            icon: 'success',
-            confirmButtonText: 'OK'
-        });
+        
     };
 
     return (
