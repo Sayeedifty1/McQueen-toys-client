@@ -34,13 +34,13 @@ const Navbar = () => {
                             Home
                         </Link>
                         
-                        <Link to="/alltoys" className={`block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-900 mr-4 ${location.pathname === '/about' ? 'active' : ''}`}>
+                        <Link to="/alltoys" className={`block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-900 mr-4 ${location.pathname === '/alltoys' ? 'active' : ''}`}>
                             All Toys
                         </Link>
-                        {user && <Link to="/mytoys" className={`block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-900 mr-4 ${location.pathname === '/about' ? 'active' : ''}`}>
+                        {user && <Link to="/mytoys" className={`block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-900 mr-4 ${location.pathname === '/mytoys' ? 'active' : ''}`}>
                             My Toys
                         </Link>}
-                        {user && <Link to="/addtoy" className={`block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-900 mr-4 ${location.pathname === '/about' ? 'active' : ''}`}>
+                        {user && <Link to="/addtoy" className={`block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-900 mr-4 ${location.pathname === '/addtoy' ? 'active' : ''}`}>
                             Add A Toy
                         </Link>}
                         <Link to="/blog" className={`block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-900 ${location.pathname === '/blog' ? 'active' : ''}`}>
