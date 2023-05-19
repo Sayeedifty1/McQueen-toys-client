@@ -10,12 +10,12 @@ const Footer = () => {
                     <p><small className="footer-title">47/D , Helem, Amirbag R/A, Chittagong</small></p>
                 </div>
                
-                <div>
+                {/* <div>
                     <span className="footer-title">Legal</span>
                     <a className="link link-hover">Terms of use</a>
                     <a className="link link-hover">Privacy policy</a>
                     <a className="link link-hover">Cookie policy</a>
-                </div>
+                </div> */}
                 <div>
                     <span className="footer-title">Social</span>
                     <div className="grid grid-flow-col gap-4">
@@ -36,7 +36,7 @@ const Footer = () => {
                         </label>
                         <div className="relative">
                             <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" />
-                            <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
+                            <button className="btn bg-base-200 border rounded text-black border-gray-600 hover:text-white hover:border-gray-900 absolute top-0 right-0 rounded-l-none">Subscribe</button>
                         </div>
                     </div>
                 </div>

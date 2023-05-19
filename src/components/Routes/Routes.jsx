@@ -47,7 +47,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/singletoy/:id',
-          element:<SingleToy></SingleToy>,
+          element:<PrivateRoute><SingleToy></SingleToy></PrivateRoute>,
           loader: ({params}) => fetch(`https://toy-e-commerece-server.vercel.app/alltoys/${params.id}`)
         },
         {

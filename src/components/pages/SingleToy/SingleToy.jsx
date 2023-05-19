@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const SingleToy = () => {
     const {  name, price, quantity, description, pictureUrl, sellerName, sellerEmail, subCategory, rating } = useLoaderData();
@@ -17,8 +17,9 @@ const SingleToy = () => {
                     <hr />
                     <p>Seller Name: {sellerName}</p>
                     <p>Seller Email: {sellerEmail}</p>
-                    
+                    <Link className="ml-auto" to="/alltoys"><button className="btn btn-xs">Return to All Toys</button></Link>
                 </div>
+                
             </div>
         </div>
     );
