@@ -5,7 +5,7 @@ const SingleToy = () => {
     
     return (
         <div className="w-5/6 mx-auto mt-20">
-            <div className="card lg:card-side bg-base-100 shadow-xl">
+            <div className="card lg:card-side bg-base-100 shadow-xl ">
                 <figure ><img src={pictureUrl} /></figure>
                 <div className=" ml-8 card-body">
                     <h2 className="card-title">Toy Name: {name}</h2>

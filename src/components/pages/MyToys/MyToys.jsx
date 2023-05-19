@@ -96,13 +96,13 @@ const MyToysPage = () => {
               <td className="p-2 border">{toy.quantity}</td>
               <td className="p-2 border">
                 <button
-                  className="bg-red-500 hover:bg-red-600 text-white px-2 py-2 rounded"
+                  className="bg-red-500 hover:bg-red-600 text-white px-2 py-2 rounded tooltip tooltip-error" data-tip="Delete Toy"
                   onClick={() => handleDeleteToy(toy._id)}
                 >
                   <RiDeleteBin5Line />
                 </button>
                 <Link to={`/updatetoy/${toy._id}`}>
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded ml-2">
+                  <button  className="bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded ml-2 tooltip tooltip-info" data-tip="Update Toy">
                     <GrDocumentUpdate />
                   </button>
                 </Link>
