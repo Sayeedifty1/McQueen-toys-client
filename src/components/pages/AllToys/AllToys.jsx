@@ -1,4 +1,5 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
@@ -53,9 +54,11 @@ const AllToys = () => {
               <td className="px-4 py-2">{toy.price}</td>
               <td className="px-4 py-2">{toy.quantity}</td>
               <td className="px-4 py-2">
-                <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-gray-600 hover:text-white hover:border-gray-900 mt-4 lg:mt-0">
-                  View Details
-                </button>
+                <Link to={`/singletoy/${toy._id}`}>
+                  <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-gray-600 hover:text-white hover:border-gray-900 mt-4 lg:mt-0">
+                    View Details
+                  </button>
+                </Link>
               </td>
             </tr>
           ))}
