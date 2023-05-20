@@ -3,6 +3,7 @@
 import  { useContext, useState } from 'react';
 import {FcGoogle} from 'react-icons/fc';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 import { AuthContext } from '../../providers/AuthProvider';
 
 
@@ -11,6 +12,7 @@ const Login = () => {
     const { signIn, signInWithGoogle} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    useTitle ('Login');
     // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState()
     console.log('login page location', location);

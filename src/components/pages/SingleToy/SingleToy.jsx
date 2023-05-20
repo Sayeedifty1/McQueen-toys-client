@@ -1,7 +1,9 @@
 import { Link, useLoaderData } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 
 const SingleToy = () => {
     const {  name, price, quantity, description, pictureUrl, sellerName, sellerEmail, subCategory, rating } = useLoaderData();
+    useTitle('Single Toy');
     
     return (
         <div className="w-5/6 mx-auto mt-20 mb-36">

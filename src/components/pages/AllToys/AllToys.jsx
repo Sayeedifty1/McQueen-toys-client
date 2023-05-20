@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  useTitle("All Toys")
 
   useEffect(() => {
     fetch("https://toy-e-commerece-server.vercel.app/alltoys")

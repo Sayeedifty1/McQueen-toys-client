@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 const Register = () => {
     const { createUser, userProfileUpdate } = useContext(AuthContext);
@@ -9,6 +10,7 @@ const Register = () => {
     const navigate = useNavigate();
     const [error, setError] = useState();
     const location = useLocation();
+    useTitle ('Register');
     const from = location.state?.from?.pathname || '/';
 
     const handleRegister = event => {

@@ -4,11 +4,13 @@ import { GrDocumentUpdate } from "react-icons/gr";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import useTitle from "../../../hooks/useTitle";
 
 const MyToysPage = () => {
   const [toys, setToys] = useState([]);
   const [sortOrder, setSortOrder] = useState("asc"); // Track the sorting order
   const { user } = useContext(AuthContext);
+  useTitle("My Toys");  // Custom hook to update title
 
   useEffect(() => {
     // Fetch the user's toys from the server with sorting query parameter
