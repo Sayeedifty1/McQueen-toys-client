@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const VideoSection = () => {
     return (
-        <div className="w-11/12 mx-auto mb-32">
+        <div className="w-5/6 mx-auto mb-32">
             <div className="hero bg-base-200 rounded-lg">
                 <div className="hero-content py-8 md:py-14 max-w-full flex flex-col lg:flex-row">
                     <div className="w-full lg:w-3/5">
