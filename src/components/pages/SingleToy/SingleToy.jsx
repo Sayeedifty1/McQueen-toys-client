@@ -19,7 +19,7 @@ const SingleToy = () => {
                     <hr />
                     <p>Seller Name: {sellerName}</p>
                     <p>Seller Email: {sellerEmail}</p>
-                    <Link className="ml-auto" to="/alltoys"><button className="btn btn-xs">Return to All Toys</button></Link>
+                    <Link className="ml-auto" to="/alltoys"><button className="btn hover:text-yellow-400 btn-xs">Return to All Toys</button></Link>
                 </div>
                 
             </div>

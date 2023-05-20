@@ -1,10 +1,12 @@
 
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const AddToys = () => {
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -50,6 +52,9 @@ const AddToys = () => {
                     text: 'Toy Added Successfully',
                     icon: 'success',
                     confirmButtonText: 'OK'
+                }).then(() => {
+                    // Redirect to My Toys page
+                    navigate('/mytoys');
                 });
             }
         })

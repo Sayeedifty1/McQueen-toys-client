@@ -4,17 +4,18 @@ import Swal from 'sweetalert2';
 import useTitle from '../../../hooks/useTitle';
 
 const UpdateToy = () => {
-    const { _id, name, price, quantity, description } = useLoaderData();
-    const [updatedPrice, setUpdatedPrice] = useState(price);
-    const [updatedQuantity, setUpdatedQuantity] = useState(quantity);
-    const [updatedDescription, setUpdatedDescription] = useState(description);
+    const { _id, name, price, availableQuantity, description } = useLoaderData();
+    const [updatedPrice, setUpdatedPrice] = useState(price || '');
+    const [updatedQuantity, setUpdatedQuantity] = useState(availableQuantity || '');
+    const [updatedDescription, setUpdatedDescription] = useState(description || '');
+
     const navigate = useNavigate();
     useTitle('Update Toy');
-  
+
 
     const handleUpdateToy = (e) => {
         e.preventDefault();
-        
+
         // Log the values being sent to the server
         console.log('Updated Price:', updatedPrice);
         console.log('Updated Quantity:', updatedQuantity);
@@ -28,7 +29,7 @@ const UpdateToy = () => {
             },
             body: JSON.stringify({
                 price: updatedPrice,
-                quantity: updatedQuantity,
+                availableQuantity: updatedQuantity,
                 description: updatedDescription
             })
         })
@@ -45,15 +46,15 @@ const UpdateToy = () => {
                     }).then(() => {
                         // Redirect to My Toys page
                         navigate('/mytoys');
-                      });
-                  
+                    });
+
                 }
             })
             .catch((error) => console.log(error));
     };
 
     return (
-        
+
         <div className="container mx-auto p-4">
             <h2 className="text-2xl font-bold mb-4">Update Toy</h2>
             <form className="max-w-md mx-auto" onSubmit={handleUpdateToy}>
@@ -78,8 +79,8 @@ const UpdateToy = () => {
                     </label>
                     <input
                         type="text"
-                        id="quantity"
-                        name="quantity"
+                        id="availableQuantity"
+                        name="availableQuantity"
                         value={updatedQuantity}
                         onChange={(e) => setUpdatedQuantity(e.target.value)}
                         className="w-full px-4 py-2 border border-gray-300 rounded-md"
@@ -106,7 +107,7 @@ const UpdateToy = () => {
                 </button>
             </form>
         </div>
-        
+
     );
 };
 

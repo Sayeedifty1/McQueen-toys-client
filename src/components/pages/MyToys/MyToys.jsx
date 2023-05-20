@@ -14,7 +14,7 @@ const MyToysPage = () => {
 
   useEffect(() => {
     // Fetch the user's toys from the server with sorting query parameter
-    const url = `https://toy-e-commerece-server.vercel.app/alltoys/seller/${user?.email}?sort=${sortOrder}`;
+    const url = `http://localhost:5000/alltoys/seller/${user?.email}?sort=${sortOrder}`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => setToys(data))
