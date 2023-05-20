@@ -38,14 +38,14 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="mb-20">
+    <div className="mb-20" data-aos="flip-left">
       <h1 className="text-3xl font-bold text-center mb-1">Photo Gallery</h1>
       <p className="text-center mb-10">All Exclusive and top sold toys of all time.</p>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 w-5/6 mx-auto">
         {images.map((image) => (
           <div
             key={image.id}
-            className={`relative overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:mask-parallelogram-3 `}
+            className={`relative overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:border-2 hover:border-yellow-500 `}
             data-aos="flip-down" // Specify the AOS animation for each image
           >
             <img src={image.src} alt={image.alt} className="w-full h-auto " />

@@ -36,7 +36,7 @@ const AllToys = () => {
           className="border border-gray-300 rounded-md px-4 py-2"
         />
       </div>
-      <table className="table w-full">
+      <table className="table w-full ">
         <thead>
           <tr className="hover">
             <th className="px-4 py-2">Seller</th>
@@ -59,7 +59,7 @@ const AllToys = () => {
               <td className="px-4 py-2">{toy.availableQuantity}</td>
               <td className="px-4 py-2">
                 <Link to={`/singletoy/${toy._id}`}>
-                  <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-gray-600 hover:text-white hover:border-gray-900 mt-4 lg:mt-0">
+                  <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-gray-600 hover:text-white hover:border-gray-900 mt-4 lg:mt-0">
                     View Details
                   </button>
                 </Link>

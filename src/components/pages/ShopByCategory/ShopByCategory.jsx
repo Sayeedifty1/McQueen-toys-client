@@ -27,9 +27,9 @@ const ShopByCategory = () => {
   };
 
   return (
-    <div className="mb-32">
+    <div className="mb-32" data-aos="fade-up">
       <h2 className="text-3xl font-bold mb-10 text-center">Shop by Category</h2>
-      <div className="bg-gray-200 py-8 px-4 w-5/6 mx-auto rounded-xl">
+      <div className=" py-8 px-4 w-5/6 mx-auto rounded-xl">
         <div className="flex justify-center space-x-4 mb-8">
           {categories.map((category) => (
             <button
@@ -44,13 +44,13 @@ const ShopByCategory = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 mx-auto">
           {toys.map((toy) => (
-            <div key={toy._id} className="bg-white p-4 shadow rounded-lg mx-auto">
+            <div key={toy._id} className="bg-gray-800 border border-yellow-400 p-4 shadow rounded-lg mx-auto">
               <img src={toy.pictureUrl} alt={toy.name} className="w-96 object-cover mb-4" />
               <h3 className="text-lg font-bold mb-2">{toy.name}</h3>
-              <p className="text-gray-700 mb-2">Price: {toy.price}</p>
-              <p className="text-gray-700 mb-2">Rating: {toy.rating}</p>
+              <p className="text-white mb-2">Price: {toy.price}</p>
+              <p className="text-white mb-2">Rating: {toy.rating}</p>
               <Link to={`/singletoy/${toy._id}`}>
-                <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-gray-600 hover:text-gray-400 hover:border-gray-200 mt-4 lg:mt-0">View Details</button>
+                <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:text-gray-400 hover:border-gray-200 mt-4 lg:mt-0">View Details</button>
               </Link>
             </div>
           ))}

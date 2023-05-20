@@ -1,5 +1,6 @@
 import useTitle from "../../../hooks/useTitle";
 import Banner from "../Banner/Banner"
+import Contact from "../Contact/Contact";
 import Gallery from "../Gallery/Gallery";
 import Reviews from "../Review/Review";
 import ShopByCategory from "../ShopByCategory/ShopByCategory"
@@ -13,6 +14,7 @@ const HomeLayout = () => {
              <ShopByCategory></ShopByCategory>
              <VideoSection></VideoSection>
              <Reviews></Reviews>
+             <Contact></Contact>
         </div>
     );
 };

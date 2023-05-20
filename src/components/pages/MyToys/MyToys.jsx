@@ -66,7 +66,7 @@ const MyToysPage = () => {
     <div className="w-5/6 mx-auto text-center mt-20 mb-36">
       <h2 className="text-3xl font-bold mb-4">My Toys</h2>
       <button
-        className="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:text-black hover:border-white mt-4 lg:mt-0 mb-8"
+        className="inline-block text-sm px-4 py-2 leading-none border rounded text-white hover:text-black border-white mt-4 lg:mt-0 mb-8"
         onClick={handleSort}
       >
         Sort by Price ({sortOrder === "asc" ? "Ascending" : "Descending"})

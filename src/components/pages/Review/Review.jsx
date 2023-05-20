@@ -3,7 +3,7 @@ const FakeReviews = () => {
         <div className="mb-36">
             <h2 className="text-3xl font-bold text-center mb-10">Some Reviews</h2>
             <div className="reviews grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-5/6 mx-auto ">
-                <div className="review bg-white p-4 shadow rounded-lg">
+                <div className="review bg-gray-800 p-4 shadow rounded-lg">
                     <div className="avatar online">
                         <div className="w-14 rounded-full">
                             <img src="https://i.ibb.co/JytzdGH/P3-OLGJ1-copy-1.png" alt="User Avatar" />
@@ -11,7 +11,7 @@ const FakeReviews = () => {
                     </div>
                     <div className="review-content">
                         <h3 className="review-title text-lg font-bold mb-2">Amazing Product</h3>
-                        <p className="review-description text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum nisl eget mauris tincidunt lobortis.</p>
+                        <p className="review-description text-white mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum nisl eget mauris tincidunt lobortis.</p>
 
                         <div className="rating gap-1">
                             <input type="radio" name="rating-3" className="mask mask-heart bg-red-400" />
@@ -32,7 +32,7 @@ const FakeReviews = () => {
                     </div>
                 </div>
 
-                <div className="review bg-white p-4 shadow rounded-lg">
+                <div className="review bg-gray-800 p-4 shadow rounded-lg">
                     <div className="review-icon text-primary">
                         <div className="avatar offline">
                             <div className="w-14 rounded-full">
@@ -42,7 +42,7 @@ const FakeReviews = () => {
                     </div>
                     <div className="review-content">
                         <h3 className="review-title text-lg font-bold mb-2">Great Quality</h3>
-                        <p className="review-description text-gray-700 mb-4">Nullam consectetur purus nec ligula pharetra ultrices. Nulla accumsan semper lectus, eu euismod risus facilisis id.</p>
+                        <p className="review-description text-white mb-4">Nullam consectetur purus nec ligula pharetra ultrices. Nulla accumsan semper lectus, eu euismod risus facilisis id.</p>
                         <div className="rating gap-1">
                             <input type="radio" name="rating-3" className="mask mask-heart bg-red-400" />
                             <input type="radio" name="rating-3" className="mask mask-heart bg-orange-400" />
@@ -61,7 +61,7 @@ const FakeReviews = () => {
                     </div>
                 </div>
 
-                <div className="review bg-white p-4 shadow rounded-lg">
+                <div className="review bg-gray-800 p-4 shadow rounded-lg">
                     <div className="avatar online">
                         <div className="w-14 rounded-full">
                             <img src="https://i.ibb.co/JytzdGH/P3-OLGJ1-copy-1.png" alt="User Avatar" />
@@ -69,7 +69,7 @@ const FakeReviews = () => {
                     </div>
                     <div className="review-content">
                         <h3 className="review-title text-lg font-bold mb-2">Awesome Customer Support</h3>
-                        <p className="review-description text-gray-700 mb-4">Vestibulum eget accumsan justo, sed bibendum eros. Cras auctor neque ut elit efficitur, et commodo velit rutrum.</p>
+                        <p className="review-description text-white mb-4">Vestibulum eget accumsan justo, sed bibendum eros. Cras auctor neque ut elit efficitur, et commodo velit rutrum.</p>
                         <div className="rating gap-1">
                             <input type="radio" name="rating-3" className="mask mask-heart bg-red-400" />
                             <input type="radio" name="rating-3" className="mask mask-heart bg-orange-400" />
