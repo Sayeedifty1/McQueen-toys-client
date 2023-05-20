@@ -1,8 +1,8 @@
 import Marquee from "react-fast-marquee";
 const FakeReviews = () => {
     return (
-        
-            <div className="mb-36">
+
+        <div className="mb-36 w-5/6 mx-auto">
             <h2 className="text-3xl font-bold text-center mb-10">Some Reviews</h2>
             <Marquee>
                 <div className="reviews grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-5/6 mx-auto ">
@@ -93,7 +93,7 @@ const FakeReviews = () => {
                     <div className="review bg-gray-800 p-4 shadow rounded-lg">
                         <div className="avatar online">
                             <div className="w-14 rounded-full">
-                                <img src="https://i.ibb.co/JytzdGH/P3-OLGJ1-copy-1.png" alt="User Avatar" />
+                                <img src="https://i.ibb.co/Jch6nZ7/chef-PNG115.png" alt="User Avatar" />
                             </div>
                         </div>
                         <div className="review-content">
@@ -120,9 +120,9 @@ const FakeReviews = () => {
                     </div>
 
                 </div>
-                </Marquee>
-            </div>
-        
+            </Marquee>
+        </div>
+
     );
 };
 
