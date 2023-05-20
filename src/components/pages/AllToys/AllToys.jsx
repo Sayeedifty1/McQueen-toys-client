@@ -22,7 +22,7 @@ const AllToys = () => {
   };
 
   return (
-    <div className="container mx-auto overflow-x-auto">
+    <div className="container mx-auto overflow-x-auto mb-32">
       <h2 className="text-3xl font-bold mb-4">All Toys</h2>
       <div className="mb-4">
         {/* TODO:design search bar */}
@@ -38,6 +38,7 @@ const AllToys = () => {
         <thead>
           <tr className="hover">
             <th className="px-4 py-2">Seller</th>
+            <th className="px-4 py-2">Picture</th>
             <th className="px-4 py-2">Toy Name</th>
             <th className="px-4 py-2">Sub-category</th>
             <th className="px-4 py-2">Price</th>
@@ -49,10 +50,11 @@ const AllToys = () => {
           {filteredToys.map((toy) => (
             <tr className="hover" key={toy._id}>
               <td className="px-4 py-2">{toy.sellerName}</td>
+              <td className="px-4 py-2"><img className="w-60 rounded-xl" src={toy.pictureUrl} alt="" /></td>
               <td className="px-4 py-2">{toy.name}</td>
               <td className="px-4 py-2">{toy.subCategory}</td>
-              <td className="px-4 py-2">{toy.price}</td>
-              <td className="px-4 py-2">{toy.quantity}</td>
+              <td className="px-4 py-2">${toy.price}</td>
+              <td className="px-4 py-2">{toy.availableQuantity}</td>
               <td className="px-4 py-2">
                 <Link to={`/singletoy/${toy._id}`}>
                   <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-gray-600 hover:text-white hover:border-gray-900 mt-4 lg:mt-0">

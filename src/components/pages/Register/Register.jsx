@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
-import backgroundImage from '../../../../public/login.jpg';
 import { useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 
@@ -49,43 +48,43 @@ const Register = () => {
 
     return (
         <div className="w-5/6 mx-auto flex justify-center items-center h-screen bg-gray-100" style={{
-            backgroundImage: `url(${backgroundImage})`,
+            backgroundImage: `url(https://i.ibb.co/f0y4wjG/cover.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}>
-            <div className="w-2/6 bg-white rounded-lg shadow-lg p-6 bg-opacity-50">
-                <h3 className="text-xl font-semibold mb-6">Please Register</h3>
+            <div className="w-2/6 bg-white rounded-lg shadow-lg p-6 bg-opacity-20">
+                <h3 className="text-xl text-white font-semibold mb-6">Please Register</h3>
                 <Form onSubmit={handleRegister}>
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold mb-2" htmlFor="name">Name</label>
+                        <label className="block text-white font-semibold mb-2" htmlFor="name">Name</label>
                         <input className="border rounded-lg px-3 py-2 w-full" type="text" name='name' placeholder="Your Name" required />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold mb-2" htmlFor="photo">Photo URL</label>
+                        <label className="block text-white font-semibold mb-2" htmlFor="photo">Photo URL</label>
                         <input className="border rounded-lg px-3 py-2 w-full" type="text" name='photo' placeholder="Photo URL" required />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold mb-2" htmlFor="email">Email address</label>
+                        <label className="block text-white font-semibold mb-2" htmlFor="email">Email address</label>
                         <input className="border rounded-lg px-3 py-2 w-full" type="email" name='email' placeholder="Enter email" required />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold mb-2" htmlFor="password">Password</label>
+                        <label className="block text-white font-semibold mb-2" htmlFor="password">Password</label>
                         <input className="border rounded-lg px-3 py-2 w-full" type="password" name='password' placeholder="Password" required />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700 font-semibold mb-2" htmlFor="accept">Accept <Link to="/terms" className="text-blue-600 hover:underline">Terms and Conditions</Link></label>
+                        <label className="block text-white font-semibold mb-2" htmlFor="accept">Accept <Link to="/terms" className="text-blue-600 hover:underline">Terms and Conditions</Link></label>
                         <input onClick={handleAccepted} type="checkbox" name="accept" className="mr-2" />
-                        <span>I agree to the terms and conditions</span>
+                        <span className='text-white'>I agree to the terms and conditions</span>
                     </div>
 
-                    <p className='text-red-400 mb-2'>{error}</p>
+                    <p className='text-red-600 mb-2'>{error}</p>
 
-                    <button disabled={!accepted} className={`bg-blue-600 text-white py-2 px-4 rounded-lg ${!accepted ? 'opacity-50 cursor-not-allowed' : ''}`} type="submit">
+                    <button disabled={!accepted} className={`inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:text-black hover:border-gray-900 mt-4 lg:mt-0 ${!accepted ? 'opacity-50 cursor-not-allowed' : ''}`} type="submit">
                         Register
                     </button>
                     <br />
-                    <p className="text-secondary text-sm mt-4">
-                        Already Have an Account? <Link to="/login" className="text-blue-600 hover:underline">Login</Link>
+                    <p className="text-red-500 text-sm mt-4">
+                        Already Have an Account? <Link to="/login" className="text-blue-500 hover:underline">Login</Link>
                     </p>
                     <p className="text-success"></p>
                     <p className="text-danger"></p>

@@ -45,10 +45,10 @@ const Gallery = () => {
         {images.map((image) => (
           <div
             key={image.id}
-            className={`relative overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 transform hover:scale-110 `}
+            className={`relative overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:mask-parallelogram-3 `}
             data-aos="flip-down" // Specify the AOS animation for each image
           >
-            <img src={image.src} alt={image.alt} className="w-full h-auto" />
+            <img src={image.src} alt={image.alt} className="w-full h-auto " />
             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
               <h3 className="text-white text-lg font-semibold">{image.alt}</h3>
             </div>

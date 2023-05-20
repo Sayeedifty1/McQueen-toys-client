@@ -4,7 +4,7 @@ const SingleToy = () => {
     const {  name, price, quantity, description, pictureUrl, sellerName, sellerEmail, subCategory, rating } = useLoaderData();
     
     return (
-        <div className="w-5/6 mx-auto mt-20">
+        <div className="w-5/6 mx-auto mt-20 mb-36">
             <div className="card lg:card-side bg-base-100 shadow-xl ">
                 <figure ><img src={pictureUrl} /></figure>
                 <div className=" ml-8 card-body">

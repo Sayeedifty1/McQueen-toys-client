@@ -61,10 +61,10 @@ const MyToysPage = () => {
   };
 
   return (
-    <div className="w-5/6 mx-auto text-center">
+    <div className="w-5/6 mx-auto text-center mt-20 mb-36">
       <h2 className="text-3xl font-bold mb-4">My Toys</h2>
       <button
-        className="bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded mb-4"
+        className="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:text-black hover:border-white mt-4 lg:mt-0 mb-8"
         onClick={handleSort}
       >
         Sort by Price ({sortOrder === "asc" ? "Ascending" : "Descending"})
@@ -93,7 +93,7 @@ const MyToysPage = () => {
               <td className="p-2 border">{toy.subCategory}</td>
               <td className="p-2 border">{toy.description}</td>
               <td className="p-2 border">${toy.price}</td>
-              <td className="p-2 border">{toy.quantity}</td>
+              <td className="p-2 border">{toy.availableQuantity}</td>
               <td className="p-2 border">
                 <button
                   className="bg-red-500 hover:bg-red-600 text-white px-2 py-2 rounded tooltip tooltip-error" data-tip="Delete Toy"

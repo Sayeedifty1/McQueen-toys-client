@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import  { useContext, useState } from 'react';
-import backgroundImage from '../../../../public/login.jpg';
+import {FcGoogle} from 'react-icons/fc';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
@@ -49,34 +49,34 @@ const Login = () => {
    
     return (
         <div className="w-5/6 mx-auto flex justify-center items-center h-screen bg-gray-100" style={{
-            backgroundImage: `url(${backgroundImage})`,
+            backgroundImage: `url(https://i.ibb.co/f0y4wjG/cover.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}>
-            <div className="w-2/6 bg-white rounded-lg shadow-lg p-6 bg-opacity-50">
-                <h3 className="text-2xl font-semibold mb-4">Please Login</h3>
+            <div className="w-2/6 bg-white rounded-lg shadow-lg p-6 bg-opacity-20">
+                <h3 className="text-2xl font-semibold mb-4 text-white">Please Login</h3>
                 <Form onSubmit={handleLogin}>
                     <div className="mb-4">
-                        <label className="block mb-2 font-medium">Email address</label>
+                        <label className="block mb-2 font-medium text-white">Email address</label>
                         <input type="email" name="email" placeholder="Enter email" required className="rounded-md py-2 px-4 border border-gray-300 text-gray-700 focus:outline-none focus:border-blue-500 w-full" />
                     </div>
 
                     <div className="mb-4">
-                        <label className="block mb-2 font-medium">Password</label>
+                        <label className="block mb-2 font-medium text-white">Password</label>
                         <input type="password" name="password" placeholder="Password" required className="rounded-md py-2 px-4 border border-gray-300 text-gray-700 focus:outline-none focus:border-blue-500 w-full" />
                     </div>
                     <p className='text-red-600 mb-2'>{error}</p>
-                    <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    <button type="submit" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:text-black hover:border-gray-900 mt-4 lg:mt-0">
                         Login
                     </button>
                     <br />
-                    <p className="text-secondary mt-4">
-                        Don't have an account? <Link to="/register" className="text-blue-500 hover:text-blue-700 font-medium">Register</Link>
+                    <p className="text-white mt-4">
+                        Don't have an account? <Link to="/register" className="text-blue-700 hover:text-blue-900 font-medium ">Register</Link>
                     </p>
-                    <p className='mx-auto text-gray-400'>or</p>
+                    <div className="divider divider-horizontal  text-gray-400">OR</div>
                 </Form>
                 <div className='flex justify-between'>
-                        <button onClick={handleGoogleLogin} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline inline-flex gap-1'>Google Sign-in</button>
+                        <button onClick={handleGoogleLogin} className='inline-block px-6 py-4 leading-none border rounded text-white border-white hover:text-black hover:border-gray-900 mt-4 lg:mt-0'><FcGoogle></FcGoogle></button>
                         
                     </div>
             </div>
