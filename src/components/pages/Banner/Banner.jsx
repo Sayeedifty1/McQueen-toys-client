@@ -27,7 +27,7 @@ const Banner = () => {
                         <h1 className="text-2xl md:text-4xl font-bold mb-4 font-outline-2 ">Welcome to McQueen Toys</h1>
                         <p className="text-lg mb-4 font-outline-1">Discover a wide range of car toys for kids of all ages.</p>
                         <Link to='https://github.com/Sayeedifty1'>
-                            <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:text-black hover:border-gray-900 mt-4 lg:mt-0">Explore More</button>
+                            <button className="relative border-2 rounded-2xl border-white bg-transparent py-2.5 px-5 font-medium text-white transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-yellow-300 before:transition-transform before:duration-300 before:content-[''] hover:text-black before:hover:scale-y-100 before:rounded-2xl">Explore More</button>
                         </Link>
                     </div>
                 </div>
@@ -37,7 +37,7 @@ const Banner = () => {
                         <h1 className="text-2xl md:text-4xl font-bold mb-4 font-outline-2 ">Welcome to McQueen Toys</h1>
                         <p className="text-lg mb-4 font-outline-1">Discover a wide range of car toys for kids of all ages.</p>
                         <Link to='https://github.com/Sayeedifty1'>
-                            <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:text-black hover:border-gray-900 mt-4 lg:mt-0">Explore More</button>
+                            <button className="relative border-2 rounded-2xl border-white bg-transparent py-2.5 px-5 font-medium text-white transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-yellow-300 before:transition-transform before:duration-300 before:content-[''] hover:text-black before:hover:scale-y-100 before:rounded-2xl">Explore More</button>
                         </Link>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ const Banner = () => {
                         <h1 className="text-2xl md:text-4xl font-bold mb-4 font-outline-2 ">Welcome to McQueen Toys</h1>
                         <p className="text-lg mb-4 font-outline-1">Discover a wide range of car toys for kids of all ages.</p>
                         <Link to='https://github.com/Sayeedifty1'>
-                            <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:text-black hover:border-gray-900 mt-4 lg:mt-0">Explore More</button>
+                            <button className="relative border-2 rounded-2xl border-white bg-transparent py-2.5 px-5 font-medium text-white transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-yellow-300 before:transition-transform before:duration-300 before:content-[''] hover:text-black before:hover:scale-y-100 before:rounded-2xl">Explore More</button>
                         </Link>
                     </div>
                 </div>

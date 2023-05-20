@@ -5,6 +5,7 @@ import useTitle from "../../../hooks/useTitle";
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [limit, setLimit] = useState(20);
   useTitle("All Toys")
 
   useEffect(() => {
@@ -22,6 +23,17 @@ const AllToys = () => {
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
   };
+
+  useEffect(() => {
+    fetch(`https://toy-e-commerece-server.vercel.app/alltoys/${limit}`)
+      .then(res => res.json())
+      .then(data => toys(data))
+  }, [limit, toys])
+ 
+  const handleLimit = () => {
+    // console.log('limit test')
+    setLimit()
+  }
 
   return (
     <div className="container mx-auto overflow-x-auto mb-32">
@@ -59,7 +71,7 @@ const AllToys = () => {
               <td className="px-4 py-2">{toy.availableQuantity}</td>
               <td className="px-4 py-2">
                 <Link to={`/singletoy/${toy._id}`}>
-                  <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-gray-600 hover:text-white hover:border-gray-900 mt-4 lg:mt-0">
+                  <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-gray-600 hover:text-white hover:border-yellow-400 mt-4 lg:mt-0">
                     View Details
                   </button>
                 </Link>
@@ -68,6 +80,10 @@ const AllToys = () => {
           ))}
         </tbody>
       </table>
+      <div className="w-full mx-auto flex justify-center my-4">
+        <button onClick={handleLimit} className={`relative border-2 rounded-2xl border-white bg-transparent py-2.5 px-5 font-medium text-white transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-yellow-300 before:transition-transform before:duration-300 before:content-[''] hover:text-black before:hover:scale-y-100 before:rounded-2xl ${limit == 20 ? '' : 'hidden'}`}>Show All</button>
+        
+      </div>
     </div>
   );
 };

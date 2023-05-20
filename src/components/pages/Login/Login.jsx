@@ -68,7 +68,7 @@ const Login = () => {
                         <input type="password" name="password" placeholder="Password" required className="rounded-md py-2 px-4 border border-gray-300 text-gray-700 focus:outline-none focus:border-blue-500 w-full" />
                     </div>
                     <p className='text-red-600 mb-2'>{error}</p>
-                    <button type="submit" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:text-black hover:border-gray-900 mt-4 lg:mt-0">
+                    <button type="submit" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white  hover:border-yellow-500 mt-4 lg:mt-0">
                         Login
                     </button>
                     <br />
@@ -78,7 +78,7 @@ const Login = () => {
                     <div className="divider divider-horizontal  text-gray-400">OR</div>
                 </Form>
                 <div className='flex justify-between'>
-                        <button onClick={handleGoogleLogin} className='inline-block px-6 py-4 leading-none border rounded text-white border-white hover:text-black hover:border-gray-900 mt-4 lg:mt-0'><FcGoogle></FcGoogle></button>
+                        <button onClick={handleGoogleLogin} className='inline-block px-6 py-4 leading-none border rounded text-white border-white  hover:border-yellow-500 mt-4 lg:mt-0'><FcGoogle></FcGoogle></button>
                         
                     </div>
             </div>

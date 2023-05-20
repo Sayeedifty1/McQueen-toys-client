@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 const ShopByCategory = () => {
   const categories = ['racing', 'police', 'truck'];
   const [activeCategory, setActiveCategory] = useState('');
@@ -25,6 +25,30 @@ const ShopByCategory = () => {
     setActiveCategory(category);
     fetchToys(category);
   };
+  // eslint-disable-next-line react/prop-types
+  const StarRating = ({ rating }) => {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating - fullStars >= 0.5;
+  
+    const starIcons = [];
+  
+    for (let i = 0; i < fullStars; i++) {
+      starIcons.push(<AiFillStar key={i} />);
+    }
+  
+    if (hasHalfStar) {
+      starIcons.push(<AiOutlineStar key={fullStars} />);
+    }
+  
+    return (
+      <div className="flex flex-row">
+      {starIcons.map((icon, index) => (
+        <span key={index}>{icon}</span>
+      ))}
+    </div>
+    );
+  };
+  
 
   return (
     <div className="mb-32" data-aos="fade-up">
@@ -34,7 +58,7 @@ const ShopByCategory = () => {
           {categories.map((category) => (
             <button
               key={category}
-              className={`bg-black px-4 py-2 rounded-lg ${activeCategory === category ? 'bg-red-500 text-white' : 'bg-gray-300 text-gray-700'
+              className={`bg-black px-4 py-2 rounded-lg ${activeCategory === category ? 'bg-yellow-500 text-white outline-1' : 'bg-gray-300 text-gray-700'
                 }`}
               onClick={() => handleCategoryChange(category)}
             >
@@ -48,9 +72,9 @@ const ShopByCategory = () => {
               <img src={toy.pictureUrl} alt={toy.name} className="w-96 object-cover mb-4" />
               <h3 className="text-lg font-bold mb-2">{toy.name}</h3>
               <p className="text-white mb-2">Price: {toy.price}</p>
-              <p className="text-white mb-2">Rating: {toy.rating}</p>
+              <p className="text-white mb-2">Rating: {toy.rating} <span className='text-yellow-400'><StarRating rating={toy.rating} /></span></p>
               <Link to={`/singletoy/${toy._id}`}>
-                <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:text-gray-400 hover:border-gray-200 mt-4 lg:mt-0">View Details</button>
+                <button className="relative border-2 rounded-2xl border-white bg-transparent py-2.5 px-5 font-medium text-white transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-yellow-300 before:transition-transform before:duration-300 before:content-[''] hover:text-yellow-300 before:hover:scale-y-100 before:rounded-2xl">View Details</button>
               </Link>
             </div>
           ))}

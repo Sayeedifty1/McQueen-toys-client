@@ -21,7 +21,7 @@ const VideoSection = () => {
                         <h1 className="text-3xl md:text-5xl font-bold mb-4">Demo of our Products</h1>
                         <p className="mb-4">All best Quality toys are here for your kids. Serving since 1995.</p>
                         <Link to="/alltoys">
-                            <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-gray-600 hover:text-white hover:border-gray-900 mt-4 lg:mt-0">All Toys</button>
+                            <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-gray-600 hover:text-white hover:border-yellow-300 mt-4 lg:mt-0">All Toys</button>
                         </Link>
                     </div>
                 </div>

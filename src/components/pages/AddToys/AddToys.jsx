@@ -61,7 +61,7 @@ const AddToys = () => {
     };
 
     return (
-        <div className="w-5/6 mx-auto bg-[#F4F3F0] p-6 md:p-12">
+        <div className="w-5/6 mx-auto  p-6 md:p-12">
             <h2 className="text-3xl font-extrabold mb-6">Add a Toy</h2>
             <form onSubmit={handleSubmit}>
                 {/* Picture URL */}
@@ -204,7 +204,7 @@ const AddToys = () => {
                 <input
                     type="submit"
                     value="Add Toy"
-                    className="btn btn-primary w-full"
+                    className="btn btn-warning w-full"
                     required
                 />
             </form>

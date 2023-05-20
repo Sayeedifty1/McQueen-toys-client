@@ -81,7 +81,7 @@ const Register = () => {
 
                     <p className='text-red-600 mb-2'>{error}</p>
 
-                    <button disabled={!accepted} className={`inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:text-black hover:border-gray-900 mt-4 lg:mt-0 ${!accepted ? 'opacity-50 cursor-not-allowed' : ''}`} type="submit">
+                    <button disabled={!accepted} className={`relative border-2 rounded-2xl border-white bg-transparent py-2.5 px-5 font-medium text-white transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-white before:transition-transform before:duration-300 before:content-[''] hover:text-black before:hover:scale-y-100 before:rounded-2xl ${!accepted ? 'opacity-50 cursor-not-allowed' : ''}`} type="submit">
                         Register
                     </button>
                     <br />
