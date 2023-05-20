@@ -69,7 +69,11 @@ const ShopByCategory = () => {
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 mx-auto">
           {toys.map((toy) => (
             <div key={toy._id} className="bg-gray-800 border border-yellow-400 p-4 shadow rounded-lg mx-auto">
-              <img src={toy.pictureUrl} alt={toy.name} className="w-96 object-cover mb-4" />
+              {/* <img src={toy.pictureUrl} alt={toy.name} className="w-96 object-cover mb-4" /> */}
+              <figure className="relative">
+              <img src={toy.pictureUrl} alt={toy.name} className="w-full h-96 relative z-10 transition-all scale-100 hover:scale-110 duration-300" />
+              <div className="border-4 border-orange-500 absolute top-10 bottom-10 left-10 right-10 z-0"></div>
+            </figure>
               <h3 className="text-lg font-bold mb-2">{toy.name}</h3>
               <p className="text-white mb-2">Price: {toy.price}</p>
               <p className="text-white mb-2">Rating: {toy.rating} <span className='text-yellow-400'><StarRating rating={toy.rating} /></span></p>
