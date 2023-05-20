@@ -13,7 +13,8 @@ const Banner = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3000 // Set the duration (in milliseconds) for auto slide
+        autoplaySpeed: 3000, // Set the duration (in milliseconds) for auto slide
+        arrows: false // Hide arrow buttons
     };
 
 
