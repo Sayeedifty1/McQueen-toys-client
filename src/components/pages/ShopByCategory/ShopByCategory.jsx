@@ -75,7 +75,7 @@ const ShopByCategory = () => {
               <div className="border-4 border-orange-500 absolute top-10 bottom-10 left-10 right-10 z-0"></div>
             </figure>
               <h3 className="text-lg font-bold mb-2">{toy.name}</h3>
-              <p className="text-white mb-2">Price: {toy.price}</p>
+              <p className="text-white mb-2">Price: ${toy.price}</p>
               <p className="text-white mb-2">Rating: {toy.rating} <span className='text-yellow-400'><StarRating rating={toy.rating} /></span></p>
               <Link to={`/singletoy/${toy._id}`}>
                 <button className="relative border-2 rounded-2xl border-white bg-transparent py-2.5 px-5 font-medium text-white transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-yellow-300 before:transition-transform before:duration-300 before:content-[''] hover:text-yellow-300 before:hover:scale-y-100 before:rounded-2xl">View Details</button>
