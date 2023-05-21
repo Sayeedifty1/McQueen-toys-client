@@ -49,12 +49,12 @@ const Register = () => {
     }
 
     return (
-        <div className="w-5/6 mx-auto flex justify-center items-center h-screen bg-gray-100" style={{
+        <div className="md:w-5/6 mx-auto flex justify-center items-center h-screen bg-gray-100" style={{
             backgroundImage: `url(https://i.ibb.co/f0y4wjG/cover.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}>
-            <div className="w-2/6 bg-white rounded-lg shadow-lg p-6 bg-opacity-20">
+            <div className="md:w-2/6 bg-white rounded-lg shadow-lg p-6 bg-opacity-20">
                 <h3 className="text-xl text-white font-semibold mb-6">Please Register</h3>
                 <Form onSubmit={handleRegister}>
                     <div className="mb-4">

@@ -58,9 +58,9 @@ const Gallery = () => {
             data-aos="flip-down"
             
           >
-            <figure className="relative">
+            <figure className="relative ">
               <img  src={image.src} alt={image.alt} className="w-full relative z-10 transition-all scale-100 hover:scale-110 duration-300" />
-              <div className="border-4 border-orange-500 absolute top-10 bottom-10 left-10 right-10 z-0"></div>
+              <div className="w-5/6 h-5/6 md:w-full  border-8 border-orange-500 absolute top-5 md:top-10 bottom-10 left-0 md:left-10 right-5 md:right-10 z-0"></div>
             </figure>
 
             {/* {hoveredImage === image.id && (

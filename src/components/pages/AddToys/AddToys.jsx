@@ -2,13 +2,17 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitle from '../../../hooks/useTitle';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const AddToys = () => {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
+    useTitle('Add Toy');
+    
     const handleSubmit = (event) => {
         event.preventDefault();
+        
 
         const form = event.target;
         const pictureUrl = form.pictureURL.value;
@@ -18,7 +22,7 @@ const AddToys = () => {
         const subCategory = form.subCategory.value;
         const price = form.price.value;
         const rating = form.rating.value;
-        const quantity = form.quantity.value;
+        const availableQuantity = form.availableQuantity.value;
         const description = form.description.value;
 
         const newToy = {
@@ -29,7 +33,7 @@ const AddToys = () => {
             subCategory,
             price,
             rating,
-            quantity,
+            availableQuantity,
             description
         };
 
@@ -183,8 +187,8 @@ const AddToys = () => {
                     </label>
                     <input
                         type="text"
-                        id="quantity"
-                        name="quantity"
+                        id="availableQuantity"
+                        name="availableQuantity"
                         placeholder="Available Quantity"
                         className="input input-bordered w-full"
                         required

@@ -10,11 +10,11 @@ const MyToysPage = () => {
   const [toys, setToys] = useState([]);
   const [sortOrder, setSortOrder] = useState("asc"); // Track the sorting order
   const { user } = useContext(AuthContext);
-  useTitle("My Toys");  // Custom hook to update title
+  useTitle("My Toys"); // Custom hook to update title
 
   useEffect(() => {
     // Fetch the user's toys from the server with sorting query parameter
-    const url = `http://localhost:5000/alltoys/seller/${user?.email}?sort=${sortOrder}`;
+    const url = `https://toy-e-commerece-server.vercel.app/alltoys/seller/${user?.email}?sort=${sortOrder}`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => setToys(data))
@@ -71,48 +71,51 @@ const MyToysPage = () => {
       >
         Sort by Price ({sortOrder === "asc" ? "Ascending" : "Descending"})
       </button>
-      <table className="w-full border-collapse">
-        <thead>
-          <tr>
-            <th className="p-2 border">Picture</th>
-            <th className="p-2 border">Name</th>
-            <th className="p-2 border">Seller</th>
-            <th className="p-2 border">Sub-category</th>
-            <th className="p-2 border">Description</th>
-            <th className="p-2 border">Price</th>
-            <th className="p-2 border">Quantity</th>
-            <th className="p-2 border">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {toys.map((toy) => (
-            <tr key={toy._id}>
-              <td className="p-2 border">
-                <img src={toy.pictureUrl} alt={toy.name} className="w-40 mx-auto" />
-              </td>
-              <td className="p-2 border">{toy.name}</td>
-              <td className="p-2 border">{toy.sellerName}</td>
-              <td className="p-2 border">{toy.subCategory}</td>
-              <td className="p-2 border">{toy.description}</td>
-              <td className="p-2 border">${toy.price}</td>
-              <td className="p-2 border">{toy.availableQuantity}</td>
-              <td className="p-2 border">
-                <button
-                  className="bg-red-500 hover:bg-red-600 text-white px-2 py-2 rounded tooltip tooltip-error" data-tip="Delete Toy"
-                  onClick={() => handleDeleteToy(toy._id)}
-                >
-                  <RiDeleteBin5Line />
-                </button>
-                <Link to={`/updatetoy/${toy._id}`}>
-                  <button  className="bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded ml-2 tooltip tooltip-info" data-tip="Update Toy">
-                    <GrDocumentUpdate />
-                  </button>
-                </Link>
-              </td>
+      <div className="overflow-x-auto">
+        <table className="w-full">
+          <thead>
+            <tr>
+              <th className="p-2 border">Picture</th>
+              <th className="p-2 border">Name</th>
+              <th className="p-2 border">Seller</th>
+              <th className="p-2 border">Sub-category</th>
+              <th className="p-2 border">Description</th>
+              <th className="p-2 border">Price</th>
+              <th className="p-2 border">Quantity</th>
+              <th className="p-2 border">Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {toys.map((toy) => (
+              <tr key={toy._id}>
+                <td className="p-2 border">
+                  <img src={toy.pictureUrl} alt={toy.name} className="w-40 mx-auto" />
+                </td>
+                <td className="p-2 border">{toy.name}</td>
+                <td className="p-2 border">{toy.sellerName}</td>
+                <td className="p-2 border">{toy.subCategory}</td>
+                <td className="p-2 border">{toy.description}</td>
+                <td className="p-2 border">${toy.price}</td>
+                <td className="p-2 border">{toy.availableQuantity}</td>
+                <td className="p-2 border">
+                  <button
+                    className="bg-red-500 hover:bg-red-600 text-white px-2 py-2 rounded tooltip tooltip-error"
+                    data-tip="Delete Toy"
+                    onClick={() => handleDeleteToy(toy._id)}
+                  >
+                    <RiDeleteBin5Line />
+                  </button>
+                  <Link to={`/updatetoy/${toy._id}`}>
+                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-2 py-2 rounded ml-2 tooltip tooltip-info" data-tip="Update Toy">
+                      <GrDocumentUpdate />
+                    </button>
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
