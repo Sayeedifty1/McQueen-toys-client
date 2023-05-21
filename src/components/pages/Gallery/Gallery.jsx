@@ -23,8 +23,8 @@ const Gallery = () => {
     },
     {
       id: 3,
-      src: 'https://i.ibb.co/nBTVJkn/racer.png',
-      alt: 'Muscle',
+      src: 'https://i.ibb.co/hKYDkdw/ramone.png',
+      alt: 'Ramone',
     },
     {
       id: 4,
