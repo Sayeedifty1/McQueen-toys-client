@@ -98,6 +98,7 @@ const MyToysPage = () => {
                 <td className="p-2 border">${toy.price}</td>
                 <td className="p-2 border">{toy.availableQuantity}</td>
                 <td className="p-2 border">
+                  <div className="flex">
                   <button
                     className="bg-red-500 hover:bg-red-600 text-white px-2 py-2 rounded tooltip tooltip-error"
                     data-tip="Delete Toy"
@@ -110,6 +111,7 @@ const MyToysPage = () => {
                       <GrDocumentUpdate />
                     </button>
                   </Link>
+                  </div>
                 </td>
               </tr>
             ))}
