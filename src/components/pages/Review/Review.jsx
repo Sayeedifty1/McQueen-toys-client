@@ -14,7 +14,7 @@ const FakeReviews = () => {
                         </div>
                         <div className="review-content">
                             <h3 className="review-title text-lg font-bold mb-2">Amazing Product</h3>
-                            <p className="review-description text-white mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum nisl eget mauris tincidunt lobortis.</p>
+                            <p className="review-description text-white mb-4">Great Quality. My son loved it. Recommended!!</p>
 
                             <div className="rating gap-1">
                                 <input type="radio" name="rating-3" className="mask mask-heart bg-red-400" />
@@ -45,7 +45,7 @@ const FakeReviews = () => {
                         </div>
                         <div className="review-content">
                             <h3 className="review-title text-lg font-bold mb-2">Great Quality</h3>
-                            <p className="review-description text-white mb-4">Nullam consectetur purus nec ligula pharetra ultrices. Nulla accumsan semper lectus, eu euismod risus facilisis id.</p>
+                            <p className="review-description text-white mb-4">Good Packaging. Delivery guy was polite. </p>
                             <div className="rating gap-1">
                                 <input type="radio" name="rating-3" className="mask mask-heart bg-red-400" />
                                 <input type="radio" name="rating-3" className="mask mask-heart bg-orange-400" />
@@ -72,7 +72,7 @@ const FakeReviews = () => {
                         </div>
                         <div className="review-content">
                             <h3 className="review-title text-lg font-bold mb-2">Awesome Customer Support</h3>
-                            <p className="review-description text-white mb-4">Vestibulum eget accumsan justo, sed bibendum eros. Cras auctor neque ut elit efficitur, et commodo velit rutrum.</p>
+                            <p className="review-description text-white mb-4">My son did not like the color , I called them they changed it without any extra charge.</p>
                             <div className="rating gap-1">
                                 <input type="radio" name="rating-3" className="mask mask-heart bg-red-400" />
                                 <input type="radio" name="rating-3" className="mask mask-heart bg-orange-400" />
@@ -98,7 +98,7 @@ const FakeReviews = () => {
                         </div>
                         <div className="review-content">
                             <h3 className="review-title text-lg font-bold mb-2">Amazing Product</h3>
-                            <p className="review-description text-white mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum nisl eget mauris tincidunt lobortis.</p>
+                            <p className="review-description text-white mb-4">Best toys for kids. Recommended!!!</p>
 
                             <div className="rating gap-1">
                                 <input type="radio" name="rating-3" className="mask mask-heart bg-red-400" />
